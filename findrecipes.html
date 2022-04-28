@@ -138,36 +138,21 @@ div.content {
     <!--add JV code-->
    <!--  <script async src="https://cse.google.com/cse.js?cx=c22c65fc66ebce092"></script> -->
    <script>
-    function hndlr(response) {
-      console.log(response)
-    for (var i = 0; i < response.items.length; i++) {
-      var item = response.items[i];
-      console.log(item.htmlTitle)
-      // in production code, item.htmlTitle should have the HTML entities escaped.
-      document.getElementById("foodlist").innerHTML += "<br>" + item.htmlTitle;
-    }
-  }
+     fetch('').then(function(response){
+       return response.json();
+     }).then(function(data){
+       console.log(data);
+     }).catch(function (err) {
+       console.warn('something went wrong', err);
+     });
+     
+ 
   </script>
 
-   <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&num=3&q=dogs&callback=hndlr"></script>
+   
 
     <script>
 
-     /*  function start() {
-        gapi.client.init({
-          'apiKey': 'AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U'
-
-        }).then(function(){
-          return gapi.client.request({
-            'path':'https://www.google.com/search?q=pcos+recipes'
-          })
-        }).then(function(response){
-          console.log(response.result);
-        }, function(reason){
-          console.log('Error: ' + reason.result.error.message);
-        });
-      };
-      gapi.load('client', start) */
       
   /*   var input = document.getElementById("myInput");
     input.addEventListener("keypress", function(event) {
