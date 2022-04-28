@@ -130,17 +130,61 @@ div.content {
     <h3>PCOS Recipe Suggestions</h3>
     <p>Please enter your ingredients.</p>
     
-    <input id="myInput" value="List your ingredients here..">
+    <input id="myInput" placeholder="List your ingredients here..">
     <button id="submit">Submit</button>
+    <div id="foodlist"></div>
+   
+   
     <!--add JV code-->
+    <!--add JV code-->
+    <script async src="https://cse.google.com/cse.js?cx=c22c65fc66ebce092"></script>
+<div class="gcse-search"></div>
+   <!--  <script async src="https://cse.google.com/cse.js?cx=c22c65fc66ebce092"></script> -->
+   <script>
+   
+   function hndlr(response) {
+      console.log(response)
+    for (var i = 0; i < response.items.length; i++) {
+      var item = response.items[i];
+      console.log(item.htmlTitle)
+      // in production code, item.htmlTitle should have the HTML entities escaped.
+      document.getElementById("foodlist").innerHTML += "<br>" + item.htmlTitle;
+    }
+  }
+  </script>
+
+   <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=pcos+food&callback=hndlr"></script>
+
     <script>
-    var input = document.getElementById("myInput");
+   <!-- <script>
+     fetch('').then(function(response){
+       return response.json();
+     }).then(function(data){
+       console.log(data);
+     }).catch(function (err) {
+       console.warn('something went wrong', err);
+     }); -->
+     
+ 
+  </script>
+
+   
+
+    <script>
+
+      
+  /*   var input = document.getElementById("myInput");
     input.addEventListener("keypress", function(event) {
       if (event.key === "Submit") {
         event.preventDefault();
         document.getElementById("submit").click();
-      }
-    });
+        let text = input.value 
+        const foodlist = text.split(",") */
+        // AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U --> API code for google search 
+
+      
+     /*  }
+    }); */
     </script>
     </div>
   </div>
