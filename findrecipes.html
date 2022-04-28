@@ -130,7 +130,7 @@ div.content {
     <h3>PCOS Recipe Suggestions</h3>
     <p>Please enter your ingredients.</p>
     
-    <input id="myInput" value="List your ingredients here..">
+    <input id="myInput" placeholder="List your ingredients here..">
     <button id="submit">Submit</button>
     <!--add JV code-->
     <script>
@@ -139,6 +139,8 @@ div.content {
       if (event.key === "Submit") {
         event.preventDefault();
         document.getElementById("submit").click();
+        let text = input.value 
+        const foodlist = text.split(",")
       }
     });
     </script>
