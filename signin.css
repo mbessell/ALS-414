@@ -1,0 +1,15 @@
+/*  this is for the sign in and sign up page  */
+
+body{
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    --color-primary: magenta;
+  }
+  
+  .form__message--success{
+    color: var(--color-success);
+  }
+  
+  .form__message--error{
+    color: var(--color-error);
+  }
