@@ -161,11 +161,12 @@ span.psw {
             <a  class="form__link" href="#"  id="linkCreateAccount"> Don't have an account? Create account</a>
           </p>
         </form>
+       <!--  to create an account  -->
         <form class="form form--hidden" id="createAccount">
           <h1 class = "form__title">Create Account</h1>
           <div class = "form__message form__message--error"></div>
           <div class = "form__input-group">
-            <input type = "text" class="form__input" autofocus placeholder="Username">
+            <input type = "text" id = signupUsername class="form__input" autofocus placeholder="Username">
             <div class="form__input-error-meassage"></div>
           </div>
           <div class = "form__input-group">
@@ -202,6 +203,20 @@ window.onclick = function(event) {
 }
 </script>
 <script>
+  function setFormMessage(formElement, type, message){
+    const messagelElement = formElement.querySelector(".form__message");
+
+    messagelElement.textContent = message;
+    messagelElement.classList.remove("form__message--success", "form__message--error");
+    messagelElement.classList.add('form__message --${type}');
+  }
+
+  function setInputError(inputElement, message){
+    inputElement.classList.add("form__input--error");
+    inputElement.parentElement.querySelector(".form__input-error-message").textContent ="";
+
+  }
+
     document.addEventListener("DOMContentLoaded", () =>{
       const loginForm = document.querySelector("#login");
       const createAccountForm = document.querySelector("#createAccount");
@@ -215,6 +230,23 @@ window.onclick = function(event) {
         e.preventDefault();
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
+      });
+      
+      loginForm.addEventListener("submit", e =>{
+        e.preventDefault();
+        setFormMessage(loginForm, "error", "Invalid username/password combination");
+        
+      });
+      document.querySelectorAll(".form__input").forEach(inputElement =>{
+        inputElement.addEventListener("blur", e => {
+          if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 10 ){
+            setInputError(inputElement, "Username must be at least 10 characters in length");
+
+          }
+        });
+        inputElement.addEventListener("input", e => {
+          clearInputError(inputElement)
+        });
       });
     });
 </script>
