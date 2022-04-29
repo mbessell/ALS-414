@@ -138,12 +138,12 @@ div.content {
     <!--add JV code-->
     <script async src="https://cse.google.com/cse.js?cx=c22c65fc66ebce092"></script>
     <script>
-     var input = document.getElementById("myInput");
+    /*  var input = document.getElementById("myInput");
     input.addEventListener("keypress", function(event) {
       if (event.key === "Submit") {
         event.preventDefault();
         document.getElementById("submit").click();
-      }  
+      }   */
     function hndlr(response) {
       console.log(response)
     for (var i = 0; i < response.items.length; i++) {
@@ -154,16 +154,10 @@ div.content {
 
     }
   }
-  /* let searchText = document.getElementById('myInput').value;
-  let searchBtn = document.getElementById('submit').addEventListener('click', search());
-
-  async function search(){
-    let results = await axios.get('"https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=**"+ input +"**&callback=hndlr')
-    console.log(results);
-  } */
+ 
   
   </script>
-   <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=food&callback=hndlr"></script>
+   <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=PCOS&callback=hndlr"></script>
 
    
 
@@ -173,3 +167,13 @@ div.content {
   </div>
 </body>
 </html>
+
+
+
+ /* let searchText = document.getElementById('myInput').value;
+  let searchBtn = document.getElementById('submit').addEventListener('click', search());
+
+  async function search(){
+    let results = await axios.get('"https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=**"+ input +"**&callback=hndlr')
+    console.log(results);
+  } */
