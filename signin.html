@@ -129,81 +129,71 @@ span.psw {
 }
 </style>
 </head>
+
+
 <body>
+  <h2>PCOS Diet Network Login Form</h2>
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+  <div id="id01" class="modal">
+    <form class="modal-content animate" action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAuo9nWDCkiS4WZqAA9y5ee4OOWmStJx5TACyKYO2Ob1FrxLyFRv3f-bt4T8lMP59Ve4k&usqp=CAU" alt="Avatar" class="avatar">
+      </div>
+      <div class="container">
+        <!-- to sign in  -->
+        <form class="form" id="login">
+          <h1 class = "form__title">Login</h1>
+          <div class = "form__message form__message--error"></div>
+          <div class = "form__input-group">
+            <input type = "text" class="form__input" autofocus placeholder="Username or email">
+            <div class="form__input-error-meassage"></div>
+          </div>
+          <div class = "form__input-group">
+            <input type="password" class="form__input " autofocus placeholder="Password">
+            <div class = "form__input-error-meassage"></div>
+          </div>
+          <button class="form__button" type="submit">Continue</button>
+          <p class="form__text">
+            <a href="#" class="form__link">Forgot your password?</a>
+          </p>
+          <p class="form__text">
+            <a  class="form__link" href="#"  id="linkCreateAccount"> Don't have an account? Create account</a>
+          </p>
+        </form>
+        <form class="form form--hidden" id="createAccount">
+          <h1 class = "form__title">Create Account</h1>
+          <div class = "form__message form__message--error"></div>
+          <div class = "form__input-group">
+            <input type = "text" class="form__input" autofocus placeholder="Username">
+            <div class="form__input-error-meassage"></div>
+          </div>
+          <div class = "form__input-group">
+            <input type = "text" class="form__input" autofocus placeholder="Email Address">
+            <div class="form__input-error-meassage"></div>
+          </div>
+          <div class = "form__input-group">
+            <input type="password" class="form__input " autofocus placeholder="Password">
+            <div class = "form__input-error-meassage"></div>
+          </div>
+          <div class = "form__input-group">
+            <input type="password" class="form__input " autofocus placeholder="Confirm Password">
+            <div class = "form__input-error-meassage"></div>
+          </div>
+          <button class="form__button" type="submit">Continue</button>
+          <p class="form__text">
+            <a  class="form__link" href="#"  id="linkLogin"> Already have an account? Sign in</a>
+          </p>
+        </form>
 
-<h2>PCOS Diet Network Login Form</h2>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAuo9nWDCkiS4WZqAA9y5ee4OOWmStJx5TACyKYO2Ob1FrxLyFRv3f-bt4T8lMP59Ve4k&usqp=CAU" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <!--  to sign in  -->
-      <form class="form form__hidden" id="login">
-        <h1 class = "form__title">Login</h1>
-        <div class = "form__message form__message--error"></div>
-        <div class = "form__input-group">
-          <input type = "text" class="form__input" autofocus placeholder="Username or email">
-          <div class="form__input-error-meassage"></div>
-        </div>
-        <div class = "form__input-group">
-          <input type="password" class="form__input " autofocus placeholder="Password">
-          <div class = "form__input-error-meassage"></div>
-        </div>
-        <button class="form__button" type="submit">Continue</button>
-        <p class="form__text">
-          <a href="#" class="form__link">Forgot your password?</a>
-        </p>
-        <p class="form__text">
-          <a  class="form__link" href="./"  id="linkCreateAccount"> Don't have an account? Create account</a>
-        </p>
-      </form>
-
-      <!-- to create an account  -->
-      <form class="form" id="createAccount">
-        <h1 class = "form__title">Create Account</h1>
-        <div class = "form__message form__message--error"></div>
-        <div class = "form__input-group">
-          <input type = "text" class="form__input" autofocus placeholder="Username">
-          <div class="form__input-error-meassage">T</div>
-        </div>
-        <div class = "form__input-group">
-          <input type = "text" class="form__input" autofocus placeholder="Email Address">
-          <div class="form__input-error-meassage">T</div>
-        </div>
-        <div class = "form__input-group">
-          <input type="password" class="form__input " autofocus placeholder="Password">
-          <div class = "form__input-error-meassage"></div>
-        </div>
-        <div class = "form__input-group">
-          <input type="password" class="form__input " autofocus placeholder="Confirm Password">
-          <div class = "form__input-error-meassage"></div>
-        </div>
-        <button class="form__button" type="submit">Continue</button>
-        <p class="form__text">
-          <a  class="form__link" href="./"  id="linkLogin"> Already have an account? Sign in</a>
-        </p>
-      </form>
-      
-    </div> 
-  </form>
-</div>
-
-
-
-
-
+        
+      </div>
+    </form>
+  </div> 
 
 <script>
 // Get the modal
 var modal = document.getElementById('id01');
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -211,27 +201,23 @@ window.onclick = function(event) {
     }
 }
 </script>
-
-
-
-
-
+<script>
+    document.addEventListener("DOMContentLoaded", () =>{
+      const loginForm = document.querySelector("#login");
+      const createAccountForm = document.querySelector("#createAccount");
+      document.querySelector("#linkCreateAccount").addEventListener("click", e =>{
+        e.preventDefault();
+        loginForm.classList.add("form--hidden");
+        createAccountForm.classList.remove("form--hidden");
+      });
+      document.querySelector("#linkLogin").addEventListener("click", e =>{
+        e.preventDefault();
+        loginForm.classList.remove("form--hidden");
+        createAccountForm.classList.add("form--hidden");
+      });
+    });
+</script>
 
 
 </body>
 </html>
-<!-- <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit"  >Login</button>  <!--link to index.html-->
-      <!-- <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-        </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span> <!--add password change -->
