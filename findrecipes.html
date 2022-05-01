@@ -31,6 +31,10 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.content--hidden{
+  display: none;
+}
+
 .sidebar {
   margin: 0;
   padding: 0;
@@ -125,25 +129,26 @@ div.content {
     <span class="item">Assesibility</span>
 </a>
 </div>
-
-<div class="content">
+<div class="content" id="error_message">
+  <h1> <class="center" style="font-size:50px"> Sign Up or Log in to Find PCOS Friendly Recipes</h1>
+  <hr>
+  <p1><class="center" style="font-size:48px"> About PCOS Recipe Suggestor.</p1>
+</div>
+<div class="content content--hidden" id="pcos_recipe">
     <h3>PCOS Recipe Suggestions</h3>
     <p>Please enter your ingredients.</p>
     
     <input id="myInput" placeholder="List your ingredients here..">
     <button id="submit">Submit</button>
     <div id="foodlist"></div>
-   
+
    
     <!--add JV code-->
     <script async src="https://cse.google.com/cse.js?cx=c22c65fc66ebce092"></script>
+    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=PCOS&callback=hndlr"></script>
     <script>
-    /*  var input = document.getElementById("myInput");
-    input.addEventListener("keypress", function(event) {
-      if (event.key === "Submit") {
-        event.preventDefault();
-        document.getElementById("submit").click();
-      }   */
+
+
     function hndlr(response) {
       console.log(response)
     for (var i = 0; i < response.items.length; i++) {
@@ -155,7 +160,18 @@ div.content {
     }
   }
   </script>
-   <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=PCOS&callback=hndlr"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const contentElement = document.querySelector("#pcos_recipe");
+      const errorElement = document.querySelector("#error_message");
+      console.log(window.localStorage.getItem('Username'))
+      if (window.localStorage.getItem('Username') == 'lolani'){
+      
+        contentElement.classList.remove("content--hidden");
+        errorElement.classList.add("content--hidden");
+      }
+    })
+  </script>
    <script>
      var Recipes;
      var api_path ='https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=';
@@ -176,11 +192,3 @@ div.content {
 </html>
 
 
-
-<!--  /* let searchText = document.getElementById('myInput').value;
-  let searchBtn = document.getElementById('submit').addEventListener('click', search());
-
-  async function search(){
-    let results = await axios.get('"https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=**"+ input +"**&callback=hndlr')
-    console.log(results);
-  } */ -->

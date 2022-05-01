@@ -146,11 +146,11 @@ span.psw {
           <h1 class = "form__title">Login</h1>
           <div class = "form__message form__message--error"></div>
           <div class = "form__input-group">
-            <input type = "text" class="form__input" autofocus placeholder="Username or email">
+            <input type = "text" class="form__input" id ="user" autofocus placeholder="Username or email">
             <div class="form__input-error-meassage"></div>
           </div>
           <div class = "form__input-group">
-            <input type="password" class="form__input " autofocus placeholder="Password">
+            <input type="password" class="form__input" id="passcode" autofocus placeholder="Password">
             <div class = "form__input-error-meassage"></div>
           </div>
           <button class="form__button" type="submit">Continue</button>
@@ -236,6 +236,13 @@ window.onclick = function(event) {
       
       loginForm.addEventListener("submit", e =>{
         e.preventDefault();
+        const loginUsername = document.getElementById("user");
+        const loginPassword = document.getElementById("passcode")
+        if (loginUsername.value == "lolani" && loginPassword.value == "Sonny123!!"){
+          window.localStorage.setItem('Username', 'lolani');
+          window.location.href = "./findrecipes.html";
+
+        }
         setFormMessage(loginForm, "error", "Invalid username/password combination");
         
       });
@@ -251,6 +258,9 @@ window.onclick = function(event) {
         });
       });
     });
+</script>
+<script>
+
 </script>
 
 
