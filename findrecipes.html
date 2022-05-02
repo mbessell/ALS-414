@@ -141,26 +141,12 @@ div.content {
     <input id="myInput" placeholder="List your ingredients here..">
     <button id="submit">Submit</button>
     <div id="foodlist"></div>
+</div>
 
    
     <!--add JV code-->
-    <script async src="https://cse.google.com/cse.js?cx=c22c65fc66ebce092"></script>
-    <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=PCOS&callback=hndlr"></script>
-    <script>
-
-
-    function hndlr(response) {
-      console.log(response)
-    for (var i = 0; i < response.items.length; i++) {
-      var item = response.items[i];
-      console.log(item.htmlTitle)
-      // in production code, item.htmlTitle should have the HTML entities escaped.
-      document.getElementById("foodlist").innerHTML += "<br>" + item.htmlTitle;
-
-    }
-  }
-  </script>
   <script>
+    //this is for sign in 
     document.addEventListener("DOMContentLoaded", function(){
       const contentElement = document.querySelector("#pcos_recipe");
       const errorElement = document.querySelector("#error_message");
@@ -172,23 +158,40 @@ div.content {
       }
     })
   </script>
-   <script>
-     var Recipes;
-     var api_path ='https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=';
-     var food = 'food';
-     var callback = 'callback=hndlr';
 
-     var URL = api_path + food + callback
 
-     
-   </script>
-   
 
-    
-    </div>
-  </div>
-  </div>
+  <!-- // API code  -->
+  <script async src="https://cse.google.com/cse.js?cx=9d586389603528cb0"></script>
+  <div class="gcse-search"></div>
+  <div id="search"></div>
+  <script>
+    function hndlr(response) {
+      for (var i =0; i < response.items.length; i++){
+        var item = response.items[i];
+        document.getElementById("search").innerHTML += "<br>" + item.htmlTitle
+      }
+    }
+  </script>
+  <script src="https://www.googleapis.com/customsearch/v1?key= AIzaSyAHNGXD3P7LGGlt8lYpEtFOjDCUgb-SpXs&cx=9d586389603528cb0:omuauf_lfve&q=pcos&callback=hndlr">
+  </script>
+  <script>
+    // api key =  AIzaSyAHNGXD3P7LGGlt8lYpEtFOjDCUgb-SpXs 
+  </script>
+
+
 </body>
 </html>
+
+
+
+<!-- *     var Recipes;
+    var api_path ='https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=';
+    var food = 'food';
+    var callback = '&callback=hndlr';
+
+    var URL = api_path + food + callback
+    console.log(URL) */ -->
+
 
 
