@@ -139,7 +139,7 @@ div.content {
     <p>Please enter your ingredients.</p>
     
     <input id="myInput" placeholder="List your ingredients here..">
-    <button id="submit">Submit</button>
+    <button id="submit" onclick="handleClick()">Submit</button>
     <div id="foodlist"></div>
 </div>
 
@@ -161,37 +161,55 @@ div.content {
 
 
 
-  <!-- // API code  -->
-  <script async src="https://cse.google.com/cse.js?cx=9d586389603528cb0"></script>
-  <div class="gcse-search"></div>
+  
   <div id="search"></div>
   <script>
     function hndlr(response) {
+      document.getElementById("search").innerHTML = ""
       for (var i =0; i < response.items.length; i++){
         var item = response.items[i];
-        document.getElementById("search").innerHTML += "<br>" + item.htmlTitle
+        console.log(item.htmlTitle)
+        document.getElementById("search").innerHTML += "<a href="+item.formattedUrl+">"+("<br>" + item.htmlTitle+"</a>")
       }
     }
+    async function getData(url = '', data = {}){
+      const response = await fetch (url, {
+        method: "GET",
+        mode:"cors",
+        cache:"no-cache",
+        credentials:"same-origin",
+        redirect:"follow",
+        referrerPolicy:"no-referrer",
+      });
+      return response.json();
+    }
+
+    function handleClick(){
+      console.log("here")
+      const foodElement = document.getElementById("myInput").value;
+      console.log(foodElement)
+      const foodlist = foodElement.replace( /(\b,*\s*)/g,'+')
+      console.log(foodlist) 
+      getData("https://www.googleapis.com/customsearch/v1?key=AIzaSyAHNGXD3P7LGGlt8lYpEtFOjDCUgb-SpXs&num=3&cx=9d586389603528cb0&q=pcos+recipes+"+foodlist)
+      .then(data =>{
+        console.log(data)
+        hndlr(data)
+      })
+    }
+
+    
   </script>
-  <script src="https://www.googleapis.com/customsearch/v1?key=AIzaSyAHNGXD3P7LGGlt8lYpEtFOjDCUgb-SpXs&cx=9d586389603528cb0&q=pcos&callback=hndlr">
-  </script>
-  <script>
-    // api key =  AIzaSyAHNGXD3P7LGGlt8lYpEtFOjDCUgb-SpXs 
-  </script>
+
+
+<!-- "https://www.googleapis.com/customsearch/v1?key=AIzaSyAHNGXD3P7LGGlt8lYpEtFOjDCUgb-SpXs&cx=9d586389603528cb0&q=pcos&callback=hndlr
+// api key =  AIzaSyAHNGXD3P7LGGlt8lYpEtFOjDCUgb-SpXs  -->
+
 
 
 </body>
 </html>
 
 
-
-<!-- *     var Recipes;
-    var api_path ='https://www.googleapis.com/customsearch/v1?key=AIzaSyDpgXAXloCWBNP0V2rcOI2WJTy0UsJhx9U&cx=c22c65fc66ebce092&q=';
-    var food = 'food';
-    var callback = '&callback=hndlr';
-
-    var URL = api_path + food + callback
-    console.log(URL) */ -->
 
 
 
