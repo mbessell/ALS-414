@@ -139,90 +139,75 @@ body {
     </style>
     </head>
     <body>
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0" nonce="0FziodjI"></script>
     
-    <div class="sidebar">
-      <a href="signup.html" >
-        <span class="icon"><i class="fas fa-address-card"></i></span>
-        <span class="item">Sign Up</span>
-    </a>
-    <a href="signin.html">
+      <div class="sidebar">
+        <a href="signup.html" >
+          <span class="icon"><i class="fas fa-address-card"></i></span>
+          <span class="item">Sign Up</span>
+      </a>
+      <a href="signin.html">
+          <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
+          <span class="item">Sign In</span>
+      </a>
+      <a href="#">
         <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
-        <span class="item">Sign In</span>
-    </a>
-    <a href="#">
-      <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
-      <span class="item">Sign Out</span>
-    </a>
-    <a href="findrecipes.html">
-        <span class="icon"><i class="fas fa-user-friends"></i></span>
-        <span class="item">Find Recipes</span>
-    </a>
-    <a href="#" class="active">
-        <span class="icon"><i class="fas fa-comment-dots"></i></span>
-        <span class="item">Message Board</span>
-    </a>
-    <a href="index.html">
-                 <span class="icon"><i class="fas fa-home"></i></span>
-            <span class="item">Home</span>
-        </a>
-    </a>
-    <a href="aboutus.html">
-        <span class="icon"><i class="fas fa-question-circle"></i></span>
-        <span class="item">About Us</span>
-    </a>
-    <a href="contactus.html">
-        <span class="icon"><i class="fas fa-envelope"></i></span>
-        <span class="item">Contact Us</span>
-    </a>
-    <!-- <a href="#">
-        <span class="icon"><i class="fas fa-cog"></i></span>
-        <span class="item">Accessibility</span>
-    </a> -->
-    </div>
+        <span class="item">Sign Out</span>
+      </a>
+      <a href="findrecipes.html">
+          <span class="icon"><i class="fas fa-user-friends"></i></span>
+          <span class="item">Find Recipes</span>
+      </a>
+      <a href="#" class="active">
+          <span class="icon"><i class="fas fa-comment-dots"></i></span>
+          <span class="item">Message Board</span>
+      </a>
+      <a href="index.html">
+                  <span class="icon"><i class="fas fa-home"></i></span>
+              <span class="item">Home</span>
+          </a>
+      </a>
+      <a href="aboutus.html">
+          <span class="icon"><i class="fas fa-question-circle"></i></span>
+          <span class="item">About Us</span>
+      </a>
+      <a href="contactus.html">
+          <span class="icon"><i class="fas fa-envelope"></i></span>
+          <span class="item">Contact Us</span>
+      </a>
+      <!-- <a href="#">
+          <span class="icon"><i class="fas fa-cog"></i></span>
+          <span class="item">Accessibility</span>
+      </a> -->
+      </div>
+      
     
-<div class="content">
-  <h1><class="center" style="font-size:50px"></class>PCOS Diet Chat</h1>
-<br>
-<div class="container">
-  <img src="https://www.ebda3academy.com/wp-content/uploads/2019/07/%E2%80%94Pngtree%E2%80%94female_931007.png" alt="Avatar" style="width:100%;">
-  <p>Hello. Have you tried making Crispy Instant Pot Carnitas?</p>
-  <span class="time-right">11:00</span>
-</div>
 
-<div class="container darker">
-  <img src="https://cdn-icons-png.flaticon.com/512/4139/4139988.png" alt="Avatar" class="right" style="width:100%;">
-  <p>Hey! Yes, I have! They are amazing and easy to make!</p>
-  <span class="time-left">11:01</span>
-</div>
+      <div id = "large_margins">
+        <p class="header_text">
+          PCOS diet chatbox 
+        </p>
+        <div class="col-xs-12">
+          <a href="index.html"><button>back</button></a>
+          <div class = "chat-box">
+            <p class="chat-messages">test message</p>
+          </div>
+          <input type="text" id = "chat-messages">
+          <input type="submit" id = "send-messages">
+        </div>
+        <div class ="col-xs-12">
+          <div class="fb-comments" data-href="https://mbessell.github.io/messageboard.html" data-width="" data-numposts="10"></div>
+        </div>
+      </div>
+      <script>
+        $('#send-messages').click(function(){
+          var message = $('#chat-messages').val();
+          console.log(message)
+          var messageHTML ='<p class="chat-messages">' + message + '</p>';
+          $('.chat-box').append(messageHTML)
+        });
+      </script>
 
-<div class="container">
-  <img src="https://www.ebda3academy.com/wp-content/uploads/2019/07/%E2%80%94Pngtree%E2%80%94female_931007.png" alt="Avatar" style="width:100%;">
-  <p>Sweet! I tried making them today, but they didn't come out crispy. Did yours come out crispy?</p>
-  <span class="time-right">11:02</span>
-</div>
-
-<div class="container darker">
-  <img src="https://cdn-icons-png.flaticon.com/512/4139/4139988.png" alt="Avatar" class="right" style="width:100%;">
-  <p>Yes, they did. But, the first time I made them they weren't crispy. I had to maranate it longer. How long did you maranate your pork in the fridge for?</p>
-  <span class="time-left">11:05</span>
-
-<div class="container">
-  <img src="https://www.ebda3academy.com/wp-content/uploads/2019/07/%E2%80%94Pngtree%E2%80%94female_931007.png" alt="Avatar" style="width:100%;">
-  <p>4 hours</p>
-  <span class="time-right">11:08</span>
-</div>
-
-<div class="container darker">
-    <img src="https://cdn-icons-png.flaticon.com/512/4139/4139988.png" alt="Avatar" class="right" style="width:100%;">
-    <p>Definitely try marinating it overnight, at least 8 hours. And before you grill them, try patting them dry slightly. Yours should come out super crispy!</p>
-    <span class="time-left">11:15</span>
-</div>
-
-<div class="container">
-    <img src="https://www.ebda3academy.com/wp-content/uploads/2019/07/%E2%80%94Pngtree%E2%80%94female_931007.png" alt="Avatar" style="width:100%;">
-    <p>OMG, thank you so much! I can't wait to try your tips!</p>
-    <span class="time-right">11:20</span>
-  </div>
-</div>
 </body>
 </html>
