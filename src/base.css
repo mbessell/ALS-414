@@ -273,3 +273,69 @@ text-align : center;
 max-width: 700px;
 max-height: 400px;
 }
+
+/*  this is for the sign in and sign up page  */
+body{
+  --color-error: #cc3333;
+  --color-success: #4bb544;
+  --color-primary: magenta;
+  --border-radius: 4px;
+}
+
+.container,
+.form__input,
+
+.form__title{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form__message{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.form__message--success{
+  color: var(--color-success);
+}
+
+.form__message--error{
+  color: var(--color-error);
+}
+
+.form__input--error{
+    color: var(--color-error);
+    border-color: var(--color-error);
+  
+}
+
+.form__input-error-meassage{
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error)
+}
+.form__button{ 
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1 rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+  }
+.form__button:active {
+  transform: scale(0.98);
+}
+.form__text {
+ text-align:center;   
+}
+.form__link:hover{
+ text-decoration: underline;   
+}
+.form--hidden {
+    display: none;
+}
+  
+*
