@@ -174,35 +174,35 @@ body {
           <span class="item">Contact Us</span>
       </a>
        </div>
-      <div class="content">
-        <h1>PCOS Food Network Message Board</h1>
-       
-       <div id = "large_margins">
+  <div class="content">
+    <h1>PCOS Food Network Message Board</h1>
+    <br>
+    <div id = "large_margins">
         <!-- <p class="header_text" style="font-size:50px">
           PCOS Food Network Message Board
         </p> -->
-        <div class="col-lg-26">
-         
-          <div class = "chat-box">
-            <br>
-            <p class="chat-messages">What are your favorite PCOS friendly recipes?</p>
-          </div>
-          <input type="text" id = "chat-messages">
-          <input type="submit" id = "send-messages"> 
-          <br>
-          <br>
-          <a href="index.html"><button>Back</button></a>
-        </div>
+    <div class="center" >   
+      <div class = "chat-box">
+        <br>
+        <p class="chat-messages">What are your favorite PCOS friendly recipes?</p>
+     </div>
+     <input type="text" id = "chat-messages">
+     <input type="submit" id = "send-messages"> 
+     <br>
+     <br>
+     <a href="index.html"><button>Back</button></a>
+    </div>
 
-      </div>
-      <script>
-        $('#send-messages').click(function(){
-          var message = $('#chat-messages').val();
-          console.log(message)
-          var messageHTML ='<p class="chat-messages">' + message + '</p>';
-          $('.chat-box').append(messageHTML)
-        });
-      </script>
+    </div>
+  </div>
+  <script>
+    $('#send-messages').click(function(){
+    var message = $('#chat-messages').val();
+    console.log(message)
+    var messageHTML ='<p class="chat-messages">' + message + '</p>';
+    $('.chat-box').append(messageHTML)
+   });
+  </script>
 
 </body>
 </html>
