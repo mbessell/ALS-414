@@ -31,7 +31,6 @@
 <style>
 h1 {text-align: center;}
 p {text-align: center;}
-ul{text-align: left;}
 div {text-align: center;}
 body {
   margin: 0 auto;
@@ -147,18 +146,18 @@ body {
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0" nonce="0FziodjI"></script>
     
       <div class="sidebar">
-        <a href="signup.html" >
+        <a href="signin.html" >
           <span class="icon"><i class="fas fa-address-card"></i></span>
-          <span class="item">Sign Up</span>
-      </a>
-      <a href="signin.html">
-          <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
-          <span class="item">Sign In</span>
+          <span class="item">Sign Up or Sign In</span>
       </a>
       <a href="#">
         <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
         <span class="item">Sign Out</span>
       </a>
+      <a href="index.html">
+        <span class="icon"><i class="fas fa-home"></i></span>
+    <span class="item">Home</span>
+</a>
       <a href="findrecipes.html">
           <span class="icon"><i class="fas fa-user-friends"></i></span>
           <span class="item">Find Recipes</span>
@@ -167,10 +166,6 @@ body {
           <span class="icon"><i class="fas fa-comment-dots"></i></span>
           <span class="item">Message Board</span>
       </a>
-      <a href="index.html">
-                  <span class="icon"><i class="fas fa-home"></i></span>
-              <span class="item">Home</span>
-          </a>
       </a>
       <a href="aboutus.html">
           <span class="icon"><i class="fas fa-question-circle"></i></span>
@@ -180,27 +175,26 @@ body {
           <span class="icon"><i class="fas fa-envelope"></i></span>
           <span class="item">Contact Us</span>
       </a>
-      <!-- <a href="#">
-          <span class="icon"><i class="fas fa-cog"></i></span>
-          <span class="item">Accessibility</span>
-      </a> -->
-      </div>
+       </div>
       
-    
-
-      <div id = "large_margins">
-        <p class="header_text">
-          PCOS diet chatbox 
+       <div id = "large_margins">
+          <div class = "chat-box">
+        <p class="header_text" >
+          PCOS Diet Message Board
         </p>
         <div class="col-xs-12">
-          <a href="index.html"><button>back</button></a>
+          <a href="index.html"><button>Back</button></a>
+          <br>
+          <br>
           <div class = "chat-box">
-            <p class="chat-messages">Share your expereince with PCOS</p>
+            <p class="chat-messages">Please share your PCOS expereinces.</p>
           </div>
           <input type="text" id = "chat-messages">
           <input type="submit" id = "send-messages">
+          <br>
+          <br>
           <div>
-            <p class = "chat-box">lol</p>
+            <p class = "chat-box">What is your favorite PCOS friendly recipe?</p>
           </div>
         </div>
         <div class ="col-xs-12">
