@@ -26,9 +26,14 @@
 
 
 <style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
+  background-color: #edadaa;
 }
 
 .sidebar {
@@ -85,15 +90,11 @@ div.content {
 <body>
 
 <div class="sidebar">
-  <a href="signup.html" >
+  <a href="signin.html" >
     <span class="icon"><i class="fas fa-address-card"></i></span>
-    <span class="item">Sign Up</span>
+    <span class="item">Sign Up or Sign In</span>
 </a>
-<a href="signin.html">
-    <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
-    <span class="item">Sign In</span>
-</a>
-<a href="#">
+<a href="logout.html">
   <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
   <span class="item">Sign Out</span>
 </a>
@@ -121,9 +122,6 @@ div.content {
     <span class="item">Contact Us</span>
 </a>
 <a href="#">
-    <span class="icon"><i class="fas fa-cog"></i></span>
-    <span class="item">Accessibility</span>
-</a>
 </div>
 
 <div class="content">
@@ -134,7 +132,7 @@ div.content {
         input[type=text], select, textarea {
           width: 100%;
           padding: 12px;
-          border: 1px solid #ccc;
+          border: 1px solid magenta;
           border-radius: 4px;
           box-sizing: border-box;
           margin-top: 6px;
@@ -144,7 +142,7 @@ div.content {
         
         input[type=submit] {
           background-color: magenta;
-          color: white;
+          color:  #edadaa;
           padding: 12px 20px;
           border: none;
           border-radius: 4px;
@@ -157,24 +155,26 @@ div.content {
         
         .container {
           border-radius: 5px;
-          background-color: #f2f2f2;
+          background-color: #db73b8;
           padding: 20px;
         }
         </style>
         </head>
         <body>
         
-        <h3>Contact Form</h3>
-        
+        <h1 style="font: size 50px; color: black">Contact Form</h1>
+        <hr>
+        <br>
+        <br>
         <div class="container">
           <form action="/action_page.php">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <label  for="fname" style="color: black">First Name</label>
+            <input style="color:black" type="text" id="fname" name="firstname" placeholder="Your name..">
         
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <label for="lname" style="color:black">Last Name</label>
+            <input style="color:black" type="text" id="lname" name="lastname" placeholder="Your last name..">
         
-            <label for="issuetype">Issue Type</label>
+            <label for="issuetype" style="color:black">Issue Type</label>
             <select id="issuetype" name="issuetype">
               <option value="login">Log in</option>
               <option value="messageboard">Message Board</option>
@@ -183,10 +183,10 @@ div.content {
               <option value="other">Other</option>
             </select>
         
-            <label for="subject">Subject</label>
+            <label for="subject" style="color:black">Subject</label>
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
         
-            <input type="submit" value="Submit" href = "index.html">
+            <input style="color:black" type="submit" value="Submit" href = "index.html">
           </form>
         </div>
   </div>
