@@ -361,7 +361,7 @@ table {
 .chat-messages{
   margin: 6px;
   padding: 3px;
-  border: 1px salmon;
+  border: 1px #000;
   background-color:#aa0486;
 }
 
