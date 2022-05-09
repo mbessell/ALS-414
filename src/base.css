@@ -351,17 +351,15 @@ table {
   margin-right: auto;
 }
 
-.chat-box {
-  margin: 12px;
-  width: 400 px;
-  height: 400 px;
-  border: 1px lavenderblush;
+html,
+body{
+  height: 100%;
+  margin:0;
+  padding:0;
 }
-
-.chat-messages{
-  margin: 6px;
-  padding: 3px;
-  border: 1px #000;
-  background-color:#aa0486;
+.chat-box {
+  margin: 20 px;
+  width: 600px;
+  border: 5px solid black;
 }
 
