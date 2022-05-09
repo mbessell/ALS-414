@@ -137,7 +137,8 @@ div.content {
     
     <input id="myInput" placeholder="List your ingredients here..">
     <button id="submit" onclick="handleClick()">Submit</button>
-    <div id="foodlist"></div>
+    <div id="foodlist"></div> 
+    <div id="search"></div>
 </div>
 
    
@@ -159,8 +160,9 @@ div.content {
 
 
   
-  <div id="search"></div>
+  
   <script>
+ 
     function hndlr(response) {
       document.getElementById("search").innerHTML = ""
       for (var i =0; i < response.items.length; i++){
