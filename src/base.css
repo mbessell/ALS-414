@@ -343,6 +343,7 @@ table {
   border-collapse: separate;
   border-spacing: 2px;
   border-color: gray;
+}
   
 
 .center {
@@ -363,3 +364,4 @@ table {
   border: 1px salmon;
   background-color:#aa0486;
 }
+
