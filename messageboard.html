@@ -208,6 +208,8 @@ div.content {
 <!--class="content" offsets our body so that it is not hidden under the navigation bar-->
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
+
+<!-- setting up the buttons and formatting them --> 
   <div class="content">
     <h1>PCOS Food Network Message Board</h1>
     <br>
@@ -221,11 +223,15 @@ div.content {
      <input type="submit" id = "send-messages"> 
      <br>
      <br>
+
+     <!-- the back button to go back the main page  -->
      <a href="index.html"><button>Back</button></a>
     </div>
 
     </div>
   </div>
+
+ <!--  whenever a message is submitted it will be added to the chat box and when another messages is added it would append to it -->
   <script>
     $('#send-messages').click(function(){
     var message = $('#chat-messages').val();
