@@ -1,147 +1,212 @@
+<!-- This is the Find Recipe page for the "PCOS Food Network", which includes user inputs for PCOS friendly ingredients and suggest recipes outputtes. 
+  There is a left vertical navigation bar that connects users to different pages of this website. The tabs are Sign Up/Sign In, Sign Out,
+  Home, Find Recipes, Message Board, About Us, and Contact Us.To protect the privacy of users, this feature will become  avaliable
+  after users make an account and log in. -->
+
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- The user (and public homepage) serves as a potential solution to the following user story: 
+    " As a person with PCOS, I would like to share my experiences and connect with other PCOS patients, 
+     so that I can be part of a community that understands what it is like to live with this disease."
+-->
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Required meta tags -->
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Required meta tags -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <!--Linking base.css -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!--Linking base.css -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 <link rel="stylesheet" href="base.css">
 
-   <!-- Bootstrap CSS -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!--Bootstrap importing -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- JavaScript importing -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
-
 <style>
-h1 {text-align: center;}
-p {text-align: center;}
-div {text-align: center;}
 
-body {
-  margin: 0;
-  font-family: "Lato", sans-serif;
-  background-color: #edadaa;
-}
-
-.content--hidden{
-  display: none;
-}
-
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #db73b8;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
- 
-.sidebar a.active {
-  background-color: #aa0486;
-  color: white;
-}
-
-.sidebar a:hover:not(.active) {
-  background-color: #db73b8;
-  color: white;
-}
-
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
-
-@media screen and (max-width: 700px) {
+  /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  /* Style (CSS) formatting for alligning text and image borders */
+  /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  
+  h1 {text-align: center;}
+  p {text-align: center;}
+  div {text-align: center;}
+  
+  /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  /* Style (CSS) formatting for popular PCOS friendly foods*/
+  /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  
+  img {
+    border: 5px solid darkmagenta;
+  }
+  
+  /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  /* Style (CSS) formatting for left horizontal navigation bar */
+  /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+   }
+  
+  table.center {
+    margin-left: auto; 
+    margin-right: auto;
+  }
+  
+  /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  /* Style (CSS) formatting for the media (clipart) in left horizontal navigation bar */
+  /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  
+  body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    background-color: #edadaa;
+  }
+  
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #db73b8;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
-
-@media screen and (max-width: 400px) {
+  
   .sidebar a {
-    text-align: center;
-    float: none;
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
   }
-}
-</style>
-</head>
-<body>
-
-<div class="sidebar">
-  <a href="signin.html" >
-    <span class="icon"><i class="fas fa-address-card"></i></span>
-    <span class="item">Sign Up or Sign In</span>
-  </a>
-  <a href="logout.html">
-  <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
-  <span class="item">Sign Out</span>
-  </a>
-  <a href="index.html">
-      <span class="icon"><i class="fas fa-home"></i></span>
-      <span class="item">Home</span>
-  </a>
-
-  <a href="findrecipes.html" class="active">
-      <span class="icon"><i class="fas fa-user-friends"></i></span>
-      <span class="item">Find Recipes</span>
-  </a>
-  <a href="messageboard.html">
-    <span class="icon"><i class="fas fa-comment-dots"></i></span>
-    <span class="item">Message Board</span>
-  </a>
-
-<a href="aboutus.html">
-    <span class="icon"><i class="fas fa-question-circle"></i></span>
-    <span class="item">About Us</span>
-</a>
-<a href="contactus.html">
-    <span class="icon"><i class="fas fa-envelope"></i></span>
-    <span class="item">Contact Us</span>
-</a>
-</div>
-<div class="content" id="error_message">
-  <h1> <class="center" style="font-size:50px"> Sign Up or Log in to Find PCOS Friendly Recipes</h1>
-  <hr>
-  <p1><class="center" style="font-size:48px"> About PCOS Recipe Generator.</p1>
-</div>
-<div class="content content--hidden" id="pcos_recipe">
-    <h3>PCOS Recipe Suggestions</h3>
-    <p>Please enter your ingredients.</p>
-    
-    <input id="myInput" placeholder="List your ingredients here..">
-    <button id="submit" onclick="handleClick()">Submit</button>
-    <div id="foodlist"></div> 
-    <div id="search"></div>
-</div>
-
    
-    <!--add JV code-->
+  .sidebar a.active {
+    background-color: #aa0486;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #db73b8;
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  </style>
+  </head>
+  <body>
+  
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- Left horizontal navigation bar with clipart icons. Each button links to a new html code that is for their specific page.-->
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  
+    <div class="sidebar">
+      <a href="signin.html" >
+        <span class="icon"><i class="fas fa-address-card"></i></span>
+        <span class="item">Sign Up or Sign In</span>
+      </a> 
+      
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  
+      <a href="logout.html">
+        <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
+        <span class="item">Sign Out</span>
+      </a>
+   
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+     
+      <a href="#" class="active">
+        <span class="icon"><i class="fas fa-home"></i></span>
+        <span class="item">Home</span>
+      </a>
+  
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->   
+  
+      <a href="findrecipes.html">
+        <span class="icon"><i class="fas fa-user-friends"></i></span>
+        <span class="item">Find Recipes</span>
+      </a>
+  
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  
+      <a href="messageboard.html">
+        <span class="icon"><i class="fas fa-comment-dots"></i></span>
+        <span class="item">Message Board</span>
+      </a>
+  
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  
+      <a href="aboutus.html">
+        <span class="icon"><i class="fas fa-question-circle"></i></span>
+        <span class="item">About Us</span>
+      </a>
+  
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  
+      <a href="contactus.html">
+        <span class="icon"><i class="fas fa-envelope"></i></span>
+        <span class="item">Contact Us</span>
+      </a>
+    </div>
+  
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+  <!--This is the content for the body portion of the recipe finder.-->
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+     
   <script>
     //this is for sign in 
     document.addEventListener("DOMContentLoaded", function(){
@@ -155,10 +220,6 @@ div.content {
       }
     })
   </script>
-
-
-
-  
   
   <script>
  
@@ -198,11 +259,8 @@ div.content {
     
   </script>
 
-
 <!-- "https://www.googleapis.com/customsearch/v1?key=AIzaSyAHNGXD3P7LGGlt8lYpEtFOjDCUgb-SpXs&cx=9d586389603528cb0&q=pcos&callback=hndlr
 // api key =  AIzaSyAHNGXD3P7LGGlt8lYpEtFOjDCUgb-SpXs  -->
-
-
 
 </body>
 </html>
