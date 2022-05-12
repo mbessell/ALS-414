@@ -28,7 +28,7 @@
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-<link rel="stylesheet" href="base.css">
+<link href="src/base.css" rel="stylesheet" />
 
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!--Bootstrap importing -->
@@ -165,7 +165,7 @@
   <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
   <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
      
-      <a href="#" class="active">
+      <a href="index.html">
         <span class="icon"><i class="fas fa-home"></i></span>
         <span class="item">Home</span>
       </a>
@@ -173,7 +173,7 @@
   <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
   <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->   
   
-      <a href="findrecipes.html">
+      <a href="#" class="active">
         <span class="icon"><i class="fas fa-user-friends"></i></span>
         <span class="item">Find Recipes</span>
       </a>
@@ -206,23 +206,44 @@
   <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
   <!--This is the content for the body portion of the recipe finder.-->
   <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-     
+
+  <div class="content content--hidden" id="pcos_recipe">
+    <h3>PCOS Recipe Suggestions</h3>
+    <p>Please enter your ingredients.</p>
+    
+    <input id="myInput" placeholder="List your ingredients here..">
+    <button id="submit" onclick="handleClick()">Submit</button>
+    <div id="foodlist"></div>
+    <div id="search"></div>
+</div>
+
+
+  <!--  /*  when dummy account login/password is input it allows user to use the recipe maker */ -->     
+  
+<!--   <div class="content" id="error_message">
+    <h1> <class="center" style="font-size:50px"> Sign Up or Log in to Find PCOS Friendly Recipes</h1>
+    <hr>
+    <p1><class="center" style="font-size:48px"> About PCOS Recipe Suggestor.</p1>
+  </div>
+  <div class="content content--hidden" id="pcos_recipe" -->>
+    
   <script>
-  /*  when dummy account login/password is input it allows user to use the recipe maker */
+ 
       document.addEventListener("DOMContentLoaded", function(){
       const contentElement = document.querySelector("#pcos_recipe");
       const errorElement = document.querySelector("#error_message");
       console.log(window.localStorage.getItem('Username'))
       if (window.localStorage.getItem('Username') == 'lolani'){
-      
+        console.log("here")
         contentElement.classList.remove("content--hidden");
         errorElement.classList.add("content--hidden");
       }
     })
   </script>
+<!--  /*  API function to be able to print the results on page */  -->
   
-  <script>
-/*  API function to be able to print the results on page */
+ <script>
+
     function hndlr(response) {
       document.getElementById("search").innerHTML = ""
       for (var i =0; i < response.items.length; i++){

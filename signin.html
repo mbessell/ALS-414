@@ -20,7 +20,7 @@
 <!--Linking base.css -->
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-<link rel="stylesheet" href="base.css">
+<link href="src/base.css" rel="stylesheet" />
 
 <style>
 body {font-family: Arial, Helvetica, sans-serif;
@@ -303,7 +303,7 @@ window.onclick = function(event) {
         e.preventDefault();
         const loginUsername = document.getElementById("user");
         const loginPassword = document.getElementById("passcode")
-        if (loginUsername.value == "lolani2400" && loginPassword.value == "Sonny123!!"){
+        if (loginUsername.value == "lolani" && loginPassword.value == "Sonny123!!"){
           window.localStorage.setItem('Username', 'lolani');
           window.location.href = "./userhomepage.html";
 

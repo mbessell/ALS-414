@@ -467,15 +467,18 @@ body{
   padding:0;
 }
 .chat-box {
-  margin: 20 px;
+  margin: auto;
   width: 600px;
   border: 5px solid black;
   background-color: #f8d6d4;
 }
-
 .chat-messages {
   margin: 6px;
   padding: 3px;
   border: 1px solid black;
   background-color:#fdf1f0;
+}
+
+.content--hidden{
+  display: none;
 }

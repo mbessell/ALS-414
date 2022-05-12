@@ -28,7 +28,7 @@
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-<link rel="stylesheet" href="base.css">
+<link href="src/base.css" rel="stylesheet" />
 
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!--Optional bootstrap importing -->
@@ -164,7 +164,7 @@ div.content {
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
    
-    <a href="#" class="active">
+    <a href='index.html'>
       <span class="icon"><i class="fas fa-home"></i></span>
       <span class="item">Home</span>
     </a>
@@ -180,7 +180,7 @@ div.content {
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-    <a href="messageboard.html">
+    <a href="#" class="active">
       <span class="icon"><i class="fas fa-comment-dots"></i></span>
       <span class="item">Message Board</span>
     </a>
@@ -209,36 +209,32 @@ div.content {
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-<!-- setting up the buttons and formatting them --> 
+
   <div class="content">
     <h1>PCOS Food Network Message Board</h1>
     <br>
-    <div id = "large_margins">   
-    <div class="center" >   
-      <div class = "chat-box">
+    <div id = "large_margins">
+      
+      <div class="center" margin ="auto" >   
+        <div class = "chat-box" >
+          <br>
+          <p class="chat-messages">What are your favorite PCOS friendly recipes?</p>
+        </div>
+        <input type="text" id = "chat-messages">
+        <input type="submit" id = "send-messages"> 
         <br>
-        <p class="chat-messages">What are your favorite PCOS friendly recipes?</p>
-     </div>
-     <input type="text" id = "chat-messages">
-     <input type="submit" id = "send-messages"> 
-     <br>
-     <br>
-
-     <!-- the back button to go back the main page  -->
-     <a href="index.html"><button>Back</button></a>
-    </div>
-
+        <br>
+        <a href="index.html"><button>Back</button></a>
+      </div>
     </div>
   </div>
-
- <!--  whenever a message is submitted it will be added to the chat box and when another messages is added it would append to it -->
   <script>
     $('#send-messages').click(function(){
     var message = $('#chat-messages').val();
     console.log(message)
     var messageHTML ='<p class="chat-messages">' + message + '</p>';
     $('.chat-box').append(messageHTML)
-   });
+  });
   </script>
 
 </body>
