@@ -208,8 +208,8 @@
   <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
      
   <script>
-    //this is for sign in 
-    document.addEventListener("DOMContentLoaded", function(){
+  /*  when dummy account login/password is input it allows user to use the recipe maker */
+      document.addEventListener("DOMContentLoaded", function(){
       const contentElement = document.querySelector("#pcos_recipe");
       const errorElement = document.querySelector("#error_message");
       console.log(window.localStorage.getItem('Username'))
@@ -222,7 +222,7 @@
   </script>
   
   <script>
- 
+/*  API function to be able to print the results on page */
     function hndlr(response) {
       document.getElementById("search").innerHTML = ""
       for (var i =0; i < response.items.length; i++){
@@ -231,6 +231,8 @@
         document.getElementById("search").innerHTML += "<a href="+item.formattedUrl+">"+("<br>" + item.htmlTitle+"</a>")
       }
     }
+
+    /* This is to fetch the results from the input */
     async function getData(url = '', data = {}){
       const response = await fetch (url, {
         method: "GET",
@@ -242,7 +244,7 @@
       });
       return response.json();
     }
-
+    /* combining the user input and the api search  */
     function handleClick(){
       console.log("here")
       const foodElement = document.getElementById("myInput").value;
