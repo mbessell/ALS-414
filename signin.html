@@ -261,6 +261,8 @@ window.onclick = function(event) {
 }
 </script>
 <script>
+
+  /* this is to input username and password and show success/error submition */
   function setFormMessage(formElement, type, message){
     const messagelElement = formElement.querySelector(".form__message");
 
@@ -279,6 +281,8 @@ window.onclick = function(event) {
     inputElement.classList.remove("form__input--error");
   }
 
+/*   this would be the steps to create an account and to ignore the login box  */
+
     document.addEventListener("DOMContentLoaded", () =>{
       const loginForm = document.querySelector("#login");
       const createAccountForm = document.querySelector("#createAccount");
@@ -293,7 +297,8 @@ window.onclick = function(event) {
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
       });
-      
+
+      /* once dummy account was submitted it would sent the user to the user homepage */
       loginForm.addEventListener("submit", e =>{
         e.preventDefault();
         const loginUsername = document.getElementById("user");
@@ -306,6 +311,8 @@ window.onclick = function(event) {
         setFormMessage(loginForm, "error", "Invalid username/password combination");
         
       });
+
+      /* to create an password  */
       document.querySelectorAll(".form__input").forEach(inputElement =>{
         inputElement.addEventListener("blur", e => {
           if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 10 ){
