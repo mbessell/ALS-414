@@ -376,12 +376,17 @@ max-height: 400px;
 /*  this is for the sign in and sign up page  */
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
+
+/* login colors */ 
 body{
   --color-error: #cc3333;
   --color-success: #4bb544;
   --color-primary: magenta;
   --border-radius: 4px;
 }
+
+
+/* inputting error and success messages for password/username */
 
 .container,
 .form__input,
@@ -414,6 +419,8 @@ body{
     font-size: 0.85rem;
     color: var(--color-error)
 }
+
+/* formatting the "continue" button  */
 .form__button{ 
     width: 100%;
     padding: 1rem 2rem;
@@ -452,6 +459,7 @@ table {
   margin-right: auto;
 }
 
+/* formatting the chat box  */
 html,
 body{
   height: 100%;
